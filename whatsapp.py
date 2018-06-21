@@ -1,19 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jun 21 17:09:06 2018
-
-@author: yossi
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Wed Mar 21 20:40:53 2018
 
-@author: user
+@author: yossi hohashvili
 """
 import pandas as pd
 import re
-
 
 def get_data(path):
     with open(path, encoding="utf-8") as file:
@@ -60,30 +52,23 @@ def get_data(path):
                                      "pic", "voice", "video", "gif"])
     return df
 
-
 def chars_stats(df):
     return df.groupby("sender").agg({"chars": ["count", "sum", "mean"]})
-
 
 def pic_stats(df):
     return df.groupby("sender").agg({"pic": ["count", "sum", "mean"]})
 
-
 def voice_stats(df):
     return df.groupby("sender").agg({"voice": ["count", "sum", "mean"]})
-
 
 def video_stats(df):
     return df.groupby("sender").agg({"video": ["count", "sum", "mean"]})
 
-
 def gif_stats(df):
     return df.groupby("sender").agg({"gif": ["count", "sum", "mean"]})
 
-
 def response_hist(df, name):
     df[df["sender"] != name].sort_values("hour")["hour"].hist()
-
 
 def response_hist_name(df, name):
     df[df["sender"] == name].sort_values("hour")["hour"].hist()

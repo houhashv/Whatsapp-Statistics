@@ -2,6 +2,8 @@
 """
 Created on Wed Mar 21 20:40:53 2018
 
+
+
 @author: yossi hohashvili
 """
 import pandas as pd

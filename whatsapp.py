@@ -8,6 +8,11 @@ import re
 
 
 def get_data(path):
+    """
+
+    :param path: the path to the data, string
+    :return: a data frame of the txt file, dataframe
+    """
     with open(path, encoding="utf-8") as file:
         data = []
         for line in file:
